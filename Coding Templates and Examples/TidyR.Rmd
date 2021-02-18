@@ -1,0 +1,53 @@
+---
+title: "TidyR and Data Tidying"
+author: "Patrick Thane"
+date: "2/18/2021"
+output:
+  html_document:
+     toc: true
+     toc_depth: 3
+     toc_float: true
+---
+
+```{r setup, dataframes}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(untidydata)
+
+language_diversity = language_diversity
+pre_post = pre_post
+```
+
+## Separate
+```{r, separate}
+pre_post_separate = pre_post %>% 
+  separate(col = spec,
+           into = c("group", "condition"),
+           sep = "_")
+```
+This is useful for breaking a single column into two columns based upon a predetermined pattern.
+
+## Unite
+```{r, unite}
+pre_post_unite = pre_post %>% 
+  unite(col = "silly", c("id", "spec"), sep = "hello")
+```
+This is useful for collapsing two columns into a single column.
+
+## Pivot longer
+```{r, pivot-longer}
+pre_post_pivot = pre_post %>% 
+  pivot_longer(cols = c("test1", "test2"),
+               names_to = "test",
+               values_to = "score")
+```
+This is useful for placing observations from two columns onto two rows within a single column.
+
+## Pivot wider
+```{r, pivot-wider}
+language_diversity_wider = language_diversity %>% 
+  pivot_wider(
+    names_from = Measurement,
+    values_from = Value)
+```
+This is useful for placing observations from two rows into two columns within a single row.

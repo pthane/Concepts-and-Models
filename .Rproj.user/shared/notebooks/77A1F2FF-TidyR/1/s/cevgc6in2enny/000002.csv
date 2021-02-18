@@ -1,0 +1,7 @@
+"0","pre_post_unite = pre_post %>% 
+  unite(col = ""silly"", c(""id"", ""group""), sep = ""hello"")
+"
+"2","Error: Can't subset columns that don't exist.
+[31mx[39m Column `group` doesn't exist.
+[90mRun `rlang::last_error()` to see where the error occurred.[39m
+"

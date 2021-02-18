@@ -1,0 +1,39 @@
+---
+title: "Basics of Linear Models"
+author: "Patrick Thane"
+date: "2/18/2021"
+output:
+  html_document:
+     toc: true
+     toc_depth: 3
+     toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Basics of Linear Model
+
+## Linear Equation
+* y = m(x) + b
+* Predictor (y-hat) = independent variable
+* Response = dependent variable
+* Intercept, slope = coeffecients
+
+## Basic terms
+* **Error:** distance between the real value and the nearest point of best fit
+* **Line of best fit:** The line that produces the smallest distance (least error) to the data points
+* **Total prediction error:** sum of the error of all observations
+* **Sum of squares:** the square of all values for the prediction error (makes these values positive and consistent)
+* **Residuals:** the distances from the line of best fit
+* **Intercept:** value of *y* when x = 0
+* **Standard estimate:** change of *y* when x changes by 1
+* **R^2:** square of correlation coeffecient ranging in value of | 1 |; measures the appropriateness of the relationship between data points a line
+* **Total deviation:** Error deviation + predicted deviation (total sum of squares)
+
+# TidyR Practice
+## Rules of tidy data
+* Every independent observation needs its own row.
+* Every independent variable needs its own column.
+* 
